@@ -244,10 +244,14 @@ public class Blob extends JApplet {
          int size = 1;  // Count the square at this position, then count the
                         //   the blobs that are connected to this square
                         //    horizontally or vertically.
-         size += getBlobSize(r-1,c);
-         size += getBlobSize(r+1,c);
-         size += getBlobSize(r,c-1);
-         size += getBlobSize(r,c+1);
+         size += getBlobSize(r-1,c); //north
+         size += getBlobSize(r+1,c); //south
+         size += getBlobSize(r,c-1); //west
+         size += getBlobSize(r,c+1); //east
+         size += getBlobSize(r-1,c-1); //north west
+         size += getBlobSize(r-1,c+1); //north east
+         size += getBlobSize(r+1,c-1); //south west
+         size += getBlobSize(r+1,c+1); //south east
          return size;
       }  // end getBlobSize()
 
