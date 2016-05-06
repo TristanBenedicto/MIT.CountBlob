@@ -44,7 +44,7 @@ public class Blob extends JApplet {
     */
    public static void main(String[] args) {
       JFrame window = new JFrame("Recursive Blob Counting");
-      window.setContentPane( new BlobsPanel(454,400) );
+      window.setContentPane( new BlobsPanel(800,600) );
       window.pack();
       window.setResizable(false);
       window.setLocation(150,100);
