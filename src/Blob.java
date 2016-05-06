@@ -60,7 +60,7 @@ public class Blob extends JApplet {
     */
    public static class BlobsPanel extends JPanel implements ActionListener, MouseListener {
 
-      final static int SQUARE_SIZE = 9;  // Size of one square in the grid.
+      final static int SQUARE_SIZE = 7;  // Size of one square in the grid.
 
       JLabel message;       // For displaying information to the user.
 
@@ -128,7 +128,7 @@ public class Blob extends JApplet {
          percentFill.addItem("80% fill");
          percentFill.addItem("90% fill");
          percentFill.setBackground(Color.WHITE);
-         percentFill.setSelectedIndex(2);
+         percentFill.setSelectedIndex(1);
 
          JButton newButton = new JButton("New Blobs");
          newButton.addActionListener(this);
@@ -137,6 +137,8 @@ public class Blob extends JApplet {
          JButton countButton = new JButton("Count the Blobs");
          countButton.addActionListener(this);
          countButton.setBackground(Color.LIGHT_GRAY);
+         
+         percentFill.addActionListener(this);
 
          /* Add the components to the panel and set their sizes and positions. */
 
@@ -158,10 +160,11 @@ public class Blob extends JApplet {
        */
       public void actionPerformed(ActionEvent evt) {
          String cmd = evt.getActionCommand();
-         if (cmd.equals("New Blobs"))
+                 
+         if (cmd.equals("New Blobs") || cmd.equals("comboBoxChanged"))
             fillGrid();
          else if (cmd.equals("Count the Blobs"))
-            countBlobs();
+            countBlobs();         
       }
 
 
